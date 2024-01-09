@@ -19,9 +19,7 @@ function play(playerChoice){
 
     if(playerChoice === computerChoice){
         result = "Tie!";
-        tieCounter++;
-        tieCounterDisplay.textContent = tieCounter;
-    }else{
+            }else{
         switch(playerChoice){
             case "rock":
                 result = (computerChoice === "scissors") ? "Win!" : "Lose!"
@@ -38,6 +36,7 @@ function play(playerChoice){
                  
         }
     }
+
 
     playerchoice.textContent = `PLAYER: ${playerChoice}`;
     computerchoice.textContent = `Computer: ${computerChoice}`;
@@ -57,10 +56,24 @@ function play(playerChoice){
             computerScoreDisplay.textContent = computerScore;
             break;
         case "Tie!":
-        resultD.classList.add("blue");               
+        resultD.classList.add("blue");  
+        tieCounter++;
+        tieCounterDisplay.textContent = tieCounter;
+             
         break;
         
         
+        }
+
+        if(playerScore === 10 || computerScore ===10){
+            setTimeout(function(){
+                if(playerScore === 10){
+                    alert("Player wins!");
+                }else{
+                    alert("Computer wins!");
+                }
+                location.reload();
+            })
         }
     
         
