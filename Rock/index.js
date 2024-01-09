@@ -4,9 +4,11 @@ const computerchoice = document.getElementById("computerchoice");
 const resultD = document.getElementById("result");
 const playerScoreDisplay = document.getElementById("playerScoreD");
 const computerScoreDisplay = document.getElementById("computerScoreD");
+const tieCounterDisplay = document.getElementById("tieCounter");
 
 let playerScore = 0;
 let computerScore = 0;
+let tieCounter = 0;
 
 
 function play(playerChoice){
@@ -17,6 +19,8 @@ function play(playerChoice){
 
     if(playerChoice === computerChoice){
         result = "Tie!";
+        tieCounter++;
+        tieCounterDisplay.textContent = tieCounter;
     }else{
         switch(playerChoice){
             case "rock":
@@ -40,7 +44,7 @@ function play(playerChoice){
     resultD.textContent = result;
 
 
-    resultD.classList.remove("green", "red");
+    resultD.classList.remove("green", "red", "blue");
     switch(result){
         case "Win!":
             resultD.classList.add("green");
@@ -52,6 +56,12 @@ function play(playerChoice){
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
             break;
+        case "Tie!":
+        resultD.classList.add("blue");               
+        break;
+        
+        
         }
+    
         
 }
