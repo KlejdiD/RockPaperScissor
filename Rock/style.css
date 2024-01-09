@@ -41,6 +41,9 @@ h1{
 .green, #playerScoreD{
 color: greenyellow;
 }
+.blue, #tieCounter{
+    color: blue;
+}
 .red, #computerScoreD {
 color: red;
 }
